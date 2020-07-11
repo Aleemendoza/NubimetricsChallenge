@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from  'react-router-dom'
+
 
 
 
@@ -15,14 +15,13 @@ export default class Product extends React.Component{
             listing_type_id: this.props.listing_type_id, 
             condition:  this.props.condition}
     }
-    
-
     render(){
+        console.log(this.props)
         return (
-        <div>
-        <p>firstName: {this.state.title}</p>,
-        <p>lastName: {this.state.thumbnail}</p>
-        <p>email : {this.state.price}</p>
+            <div>
+        <p>title: {this.state.title}</p>
+        <p>thumbnail: {this.state.thumbnail}</p>
+        <p>price : {this.state.price}</p>
         </div>
         );
     }

@@ -7,18 +7,19 @@ export function getAllProduct() {
     return fetch("https://api.mercadolibre.com/sites/MLA/search?q=iphone")
       .then(response => response.json())
       .then(json => {
+        console.log(json.results)
         dispatch({
           type: GET_ALL_PRODUCT,
-          payload: json
+          payload: json,
         });
       });
-  };
+    };
 }
 
 
 export function getProduct(keyword) {
   return function (dispatch) {
-    return fetch("https://api.mercadolibre.com/sites/MLA")
+    return fetch("https://api.mercadolibre.com/sites/MLA/search?q=" + keyword )
       .then(response => response.json())
       .then(json => {
         dispatch({
