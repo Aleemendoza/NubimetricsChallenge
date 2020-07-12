@@ -16,7 +16,6 @@ export default class Product extends React.Component{
             condition:  this.props.condition}
     }
     render(){
-        console.log(this.props)
         return (
             <div>
         <p>title: {this.state.title}</p>

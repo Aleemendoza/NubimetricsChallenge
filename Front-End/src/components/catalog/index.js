@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import {getAllProduct} from '../../actions/products'
-     
+import {getAllProduct, getProduct} from '../../actions/products'
 
 
 
@@ -13,15 +12,13 @@ class Catalog extends React.Component{
 
     componentDidMount(){
         this.props.getAllProduct()
-        console.log(this.props.getAllProduct())
-    }
+      }
 
 render(){
-
     return (
-      <div>
+      <div className="productContainer" >
       {this.props.catalog && this.props.catalog.map(product => (
-        <tr>
+        <tr className ='producto'>
           
           <td> titulo: {product.title} </td>
           <img src={product.thumbnail}/>
@@ -45,4 +42,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { getAllProduct})(Catalog);
+export default connect(mapStateToProps, { getAllProduct, getProduct})(Catalog);

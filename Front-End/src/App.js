@@ -18,6 +18,7 @@ function App() {
             <BrowserRouter >          
                 <Route  path="/"       component = {buscador} />
                 <Route  path="/"       component = {catalog} />
+                
               </BrowserRouter>
         </Provider>
       </div>
