@@ -1,15 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {Provider} from 'react-redux';
+import { BrowserRouter , Route } from 'react-router-dom';
+import catalog from './components/catalog';
+import store from './store/index';
+import singleProduct from './components/singleProducts'
+import "bootstrap/dist/css/bootstrap.min.css"
+import buscador from './components/search'
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
-  );
-}
+        <Provider store={store}>
+            <BrowserRouter >          
+                <Route  path="/"       component = {buscador} />
+                <Route  path="/"       component = {catalog} />
+              </BrowserRouter>
+        </Provider>
+      </div>
+        );
+   
+      }
+      
 
 export default App;
