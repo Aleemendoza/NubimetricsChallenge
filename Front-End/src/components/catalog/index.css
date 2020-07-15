@@ -1,0 +1,31 @@
+@media (min-width: 700px) { 
+     
+    
+    .productContainer {
+        margin: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 30px;
+        
+    }
+    .producto {
+        
+        width: 23%;
+        border: solid black 2px;
+        padding: 15px;
+        margin: 10px;
+        justify-content: space-between;
+        
+    }
+    .imagen {
+        
+        width: 100px;
+        height: 100px;
+        
+    
+        
+    }
+ 
+    
+}

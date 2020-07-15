@@ -1,12 +1,12 @@
 import {
   GET_PRODUCT,
   GET_ALL_PRODUCT,
-
+  FILTER_PRODUCTS
 } from '../actions/products';
 
 const initialState = {
   catalog: [],
-
+  filter: []
   
 };
 const reducer = (state = initialState, action) => {
@@ -21,6 +21,13 @@ const reducer = (state = initialState, action) => {
         ...state,
         catalog: action.payload.results
       }
+      case FILTER_PRODUCTS :
+        return {
+          ...state,
+          catalog: action.payload.results.price
+        }
+
+
     default:
       return state
   }

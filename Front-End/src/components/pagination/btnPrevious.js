@@ -12,7 +12,9 @@ export class Buscador extends Component {
     };
   }
   handleChange(event) {
-    this.setState({ keyword: event.target.value });
+    this.setState({ 
+        next: event.target.value 
+    });
     
   }
   handleSubmit(event) {
@@ -23,9 +25,7 @@ export class Buscador extends Component {
   render() {
     const { keyword } = this.state;
     return (
-      <div className="navbar navbar-light bg-dark justify-content-between" style = {{height: "100px"}}>
-        <a class="navbar-brand" style= {{color: "white"}} >Encontra lo que buscas! </a>
-        <form className="form-inline" onSubmit={(e) => this.handleSubmit(e)}>
+            <div>
               <div>
                   <input className="form-control mr-sm-2"
                     type="text"
@@ -34,10 +34,8 @@ export class Buscador extends Component {
                     onChange={(e) => this.handleChange(e)}
                   />
               </div>
-            
-              <button className="btn btn-primary" type="submit">BUSCAR</button> 
-        </form>
-      </div>
+            <button className="btn btn-primary" type="submit">BUSCAR</button> 
+            </div>
     );
   }
 }
