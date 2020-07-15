@@ -17,17 +17,22 @@ class Catalog extends React.Component {
   }
   state = {
     abierto: false,
+    product: {}
   }
 
-  abrirModal = (listingTypeId) => {
-    this.setState({ abierto: !this.state.abierto });
+  abrirModal = (product) => {
+    this.setState({
+      abierto: !this.state.abierto,
+      product
+    });
   }
 
   render() {
     return (
       <div className="productContainer" >
         {this.props.catalog && this.props.catalog.map(product => (
-          <tr className='producto' key = {product.id} style= {{background:"white"}} >
+          <tr className='producto' key={product.id} style={{ background: "white" }} >
+            <div className="id"> id: {product.listingTypeId}</div>
 
             <img className="imagen" src={product.thumbnail} />
             <h3> {product.title} </h3>
@@ -36,32 +41,32 @@ class Catalog extends React.Component {
             <h5> cantidades vendidas: {product.sold_quantity} </h5>
             <h6> tipo de listado: {product.listing_type_id} </h6>
             <p> condicion: {product.condition} </p>
-            <div className="id"> id: {product.listingTypeId}</div>
-            
-            <Button color="success" onClick={this.abrirModal}>Ver Producto!</Button>
-            <div>
-            <Modal className = "styleModal" isOpen={this.state.abierto} style = {{opacity: "100%"}}>
-              <ModalHeader key = {product.id}>
-                <h3> {product.title} </h3>
-              </ModalHeader>
-              <ModalBody >
-              <img className="img" src={product.thumbnail} alt=""/>
-      <div>{product.condition}</div>
-      <div>{product.title}</div>
-      <div>$ {product.price}</div>
-      <div>{product.availableQ} disponibles</div>
-      <div>{product.soldQ} vendidos</div>
-      <div>{product.listingTypeId}</div>
-              </ModalBody>
 
-              <ModalFooter>
 
-                <Button color="secondary" onClick={this.abrirModal}>Cerrar</Button>
-              </ModalFooter>
-            </Modal>
-            </div>
+            <Button color="success" onClick={() => { this.abrirModal(product) }}>Ver Producto!</Button>
           </tr>
         ))}
+        <div>
+          <Modal className="styleModal" isOpen={this.state.abierto} style={{ opacity: "100%" }}>
+            <ModalHeader key={this.state.product.id}>
+              <h3> {this.state.product.title} </h3>
+            </ModalHeader>
+            <ModalBody >
+              <img className="img" src={this.state.product.thumbnail} alt="" />
+              <p>Status: {this.state.product.status}</p>
+                <p>Site id: {this.state.product.site_id}</p>
+                <p>Cantidad inicial: {this.state.product.initial_quantity} unidades</p>
+                <p>Precio base: ${this.state.product.base_price}</p>
+                <p>{this.state.product.warranty}</p>
+              
+            </ModalBody>
+
+            <ModalFooter>
+
+              <Button color="secondary" onClick={this.abrirModal}>Cerrar</Button>
+            </ModalFooter>
+          </Modal>
+        </div>
       </div>
     );
   }

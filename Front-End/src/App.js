@@ -6,6 +6,7 @@ import catalog from './components/catalog';
 import store from './store/index';
 import "bootstrap/dist/css/bootstrap.min.css"
 import buscador from './components/search'
+import pagination from './components/pagination'
 
 function App() {
   return (
@@ -13,8 +14,8 @@ function App() {
       <Provider store={store}>
         <BrowserRouter >
           <Route path="/" component={buscador} />
-          
           <Route path="/" component={catalog} />
+          <Route path="/" component={pagination} />
         </BrowserRouter>
       </Provider>
     </div>

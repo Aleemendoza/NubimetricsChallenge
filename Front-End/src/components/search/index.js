@@ -24,7 +24,7 @@ export class Buscador extends Component {
     const { keyword } = this.state;
     return (
       <div className="navbar navbar-light bg-dark justify-content-between" style = {{height: "100px"}}>
-        <a class="navbar-brand" style= {{color: "white"}} >Encontra lo que buscas! </a>
+        <div className ="navbar-brand" style= {{color: "white"}} >Encontra lo que buscas! </div>
         <form className="form-inline" onSubmit={(e) => this.handleSubmit(e)}>
               <div>
                   <input className="form-control mr-sm-2"
