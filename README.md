@@ -1,11 +1,11 @@
-# NubimetricsChallenge
+# Landing que busca productos mediante API de Me.Li
 
-landing que busca productos mediante API de ML
 
 
 para iniciar el proyecto: 
 
 - git clone https://github.com/Aleemendoza/NubimetricsChallenge.git
+- cd /Front-end
 - npm install
 - npm start
 
@@ -13,10 +13,8 @@ este proyecto fue creado con React, para el estado global utilice Redux.
 
 Tiene estilos hechos con react-boostrap y CSS.
 
-Listar publicaciones = muestra publicaciones con valores pedidos.
+Muestra publicaciones con sus valores.
 
-El Usuario debe poder observar páginas de a 20 = muestra 20 publicaciones, pero el paginado no llegue con el tiempo.
+Muestra 20 publicaciones,el paginado es algo a implementar en futuros features como tambien el filtrado por precio.
 
-el usuario debe tener la posibilidad de ordenar por “price” o “sold_quantity” = no logre hacerlo.
-
-Al hacer clic en una publicación se debe mostrar en un modal = tambien funciona, pero no me muestra todos los datos.
+Al hacer clic en una publicación se muestra un modal.
