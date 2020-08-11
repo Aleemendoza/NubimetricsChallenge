@@ -4,7 +4,7 @@
 
 para iniciar el proyecto: 
 
-- git clone https://github.com/Aleemendoza/NubimetricsChallenge.git
+- git clone https://github.com/Aleemendoza/Search-In-ME.LI.git
 - cd /Front-end
 - npm install
 - npm start
